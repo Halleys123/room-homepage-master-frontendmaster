@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "League Spartan", sans-serif;
+}
+
+.text {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: hsl(0, 0%, 63%);
+}
+
+.container {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  padding: 4.8rem;
+  gap: 6rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container__favicon {
+  width: 6.2rem;
+  height: 1.4rem;
+}
+.container__menuIcon--hidden {
+  display: none;
+}
+.container__menuIcon--visible {
+  display: block;
+}
+.container__text {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: hsl(0, 0%, 100%);
+  transition: all 0.3s;
+  position: relative;
+}
+.container__text:hover {
+  cursor: pointer;
+}
+.container__text::after {
+  content: "";
+  transition: all 0.3s;
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: hsl(0, 0%, 100%);
+}
+.container__text:hover::after {
+  width: 100%;
+}
+
+.content {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  gap: 0;
+}
+.content__upper {
+  display: flex;
+  flex-direction: row;
+  width: 300%;
+  height: 100%;
+}
+.content__upper__crousel {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  height: inherit;
+  transition: all 0.5s;
+  width: 100vw;
+}
+.content__upper__crousel__imageButton {
+  position: relative;
+}
+.content__upper__crousel__imageButton__image {
+  width: 100%;
+  height: 100%;
+}
+.content__upper__crousel__imageButton__buttons {
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+  display: flex;
+  transform: translateX(100%);
+  gap: 0;
+}
+.content__upper__crousel__imageButton__buttons__left {
+  padding: 3.2rem;
+  background-color: hsl(0, 0%, 0%);
+  transition: all 0.3s ease-in-out;
+}
+.content__upper__crousel__imageButton__buttons__left:hover {
+  cursor: pointer;
+  background-color: hsl(0, 0%, 27%);
+}
+.content__upper__crousel__imageButton__buttons__right {
+  padding: 3.2rem;
+  transition: all 0.3s ease-in-out;
+  background-color: hsl(0, 0%, 0%);
+}
+.content__upper__crousel__imageButton__buttons__right:hover {
+  cursor: pointer;
+  background-color: hsl(0, 0%, 27%);
+}
+.content__upper__crousel__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8rem;
+}
+.content__upper__crousel__description__head {
+  font-size: 4.2rem;
+  line-height: 4rem;
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+  padding-bottom: 2.4rem;
+}
+.content__upper__crousel__description__text {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: hsl(0, 0%, 63%);
+  padding-bottom: 3.6rem;
+}
+.content__upper__crousel__description__shop {
+  display: flex;
+  gap: 2.4rem;
+  align-items: center;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.content__upper__crousel__description__shop:hover {
+  color: hsl(0, 0%, 27%);
+  cursor: pointer;
+}
+.content__upper__crousel__description__shop__text {
+  letter-spacing: 1.2rem;
+  font-size: 1.8rem;
+  color: hsl(0, 0%, 63%);
+}
+.content__lower {
+  display: grid;
+  width: 100vw;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.content__lower__image {
+  width: 100%;
+  height: 100%;
+}
+.content__lower__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 5rem;
+}
+.content__lower__description__head {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: hsl(0, 0%, 0%);
+  padding-bottom: 1.6rem;
+}
+.content__lower__description__text {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+  color: hsl(0, 0%, 63%);
+  padding-bottom: 3.6rem;
+}/*# sourceMappingURL=style.css.map */
