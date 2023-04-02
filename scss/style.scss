@@ -1,0 +1,334 @@
+@import "imports";
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "League Spartan", sans-serif;
+}
+.home .shop .about .contact {
+  &:hover {
+    cursor: pointer;
+    color: color(darkGray);
+  }
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  //   grid-template: 1.5fr 1fr/1fr;
+  height: 100%;
+  width: 100%;
+
+  &__upper {
+    grid-row: 1/2;
+    // background-color: grey;
+    width: 100%;
+    height: 60%;
+    display: flex;
+    grid-template: 1fr/1.5fr 1fr;
+    &__image {
+      background-color: white;
+      flex: 0 1 60%;
+      background-image: url("../../images/desktop-image-hero-1.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+      transition: all 0.3s;
+      &__buttons {
+        z-index: 1;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        transform: translate(100%, 0);
+        // width: 4.8rem;
+        // height: 2.4rem;
+        // padding: 2.4rem;
+        &--img {
+          height: 100%;
+          width: auto;
+          padding: 2.5rem;
+          transition: all 0.3s;
+          background-color: color(black);
+          &:hover {
+            cursor: pointer;
+            background-color: color(veryDarkGray);
+          }
+        }
+      }
+      &--img {
+        height: 100%;
+        width: auto;
+      }
+    }
+    &__descr {
+      //   background-color: lightblue;
+      flex: 0 1 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &__text {
+        width: 70%;
+        // height: 70%;
+        margin: 0 auto;
+        &__head {
+          font-size: 3.2rem;
+          font-weight: 700;
+          color: color(black);
+          margin-bottom: 1.2rem;
+        }
+        &__body {
+          font-size: 1.2rem;
+          font-weight: 400;
+          color: color(darkGray);
+          margin-bottom: 1.2rem;
+        }
+        &__shopNow {
+          align-self: flex-start;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 1.2rem;
+          letter-spacing: 8px;
+          font-size: 1.2rem;
+          transition: all 0.3s;
+          &:hover {
+            cursor: pointer;
+            color: color(darkGray);
+          }
+          > img {
+            width: 4rem;
+            align-self: center;
+            justify-self: center;
+          }
+        }
+      }
+      // z-index: 1;
+    }
+  }
+  &__lower {
+    // grid-row: 2/3;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 40%;
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+    // grid-template: 1fr/1fr 1.5fr 1fr;
+    &__image {
+      background-color: lightgray;
+      flex: 0 1 30%;
+      &--img {
+        height: 100%;
+      }
+    }
+    &__descr {
+      flex: 0 1 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &__head {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: color(black);
+        margin-bottom: 1.2rem;
+        width: 80%;
+        letter-spacing: 6px;
+        margin: 0 auto;
+        padding-bottom: 1.2rem;
+      }
+      &__body {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: color(darkGray);
+        margin-bottom: 1.2rem;
+        line-height: 1.5;
+        // letter-spacing: 1px;
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+.mobile {
+  display: none;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  gap: 3.2rem;
+  padding: 3.2rem;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  left: 0;
+  color: color(white);
+  font-size: 1.2rem;
+  align-items: center;
+  &__logo {
+    width: fit-content;
+    height: fit-content;
+  }
+  &__item {
+    transition: all 0.3s;
+    &:hover {
+      cursor: pointer;
+      color: color(darkGray);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    height: fit-content;
+  }
+  .header {
+    position: fixed;
+    align-items: center;
+    // justify-self: center;
+    width: 100vw;
+    &__logo {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+    > p {
+      display: none;
+    }
+  }
+  .mobile {
+    display: inline;
+  }
+  .content {
+    height: fit-content;
+    overflow-x: hidden;
+
+    width: 100vw;
+    &__upper {
+      flex-direction: column;
+      height: fit-content;
+      &__descr {
+        &__text {
+          &__shopNow {
+            padding-top: 3.2rem;
+          }
+        }
+      }
+      &__image {
+        flex: 1 0 60%;
+        min-height: 50vh;
+        &__buttons {
+          &--img {
+            // transform: translate(-25%, 0);
+
+            padding: 1.6rem;
+          }
+          transform: translate(0, 0);
+        }
+      }
+      &__descr {
+        margin: 2.4rem 3.2rem 4.8rem 2.4rem;
+        flex: 0 1 100%;
+        height: 60vh;
+        &__text {
+          width: 90%;
+          &__head {
+            font-size: 2.4rem;
+          }
+          &__body {
+            font-size: 1.2rem;
+            line-height: 1.6rem;
+          }
+          &__shopNow {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+    &__lower {
+      flex-direction: column;
+      height: fit-content;
+      gap: 2.4rem;
+      &__image {
+        flex: 1 0 30%;
+        width: 100%;
+        height: fit-content;
+        > img {
+          width: 100%;
+        }
+        // height: 30vh;
+      }
+      &__descr {
+        flex: 0 1 100%;
+        height: 60vh;
+        &__head {
+          font-size: 1.4rem;
+        }
+        &__body {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+.header {
+  z-index: 5;
+
+  &__burger {
+    z-index: 5;
+  }
+}
+.mobile__header__nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 17vh;
+  width: 100vw;
+  font-size: 1.2rem;
+  background-color: color(white);
+  color: color(black);
+  //   transform: translate(-100%, 0);
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 1.2rem;
+  transition: all 0.3s;
+  z-index: 5;
+  transform: translate(0, -100%);
+  &__item {
+    padding-right: 1.2rem;
+  }
+}
+.active {
+  transform: translate(0, 0);
+}
+.header__burger {
+  z-index: 6;
+}
+.change {
+  content: url("../../images/icon-close.svg");
+}
+.darken {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.blurBackground {
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 100%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  display: inline;
+  z-index: 2;
+}
+.fix {
+  height: 100vh;
+  overflow: hidden;
+}
